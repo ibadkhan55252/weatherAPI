@@ -8,6 +8,7 @@ let wind = document.getElementById("wind");
 let humidity = document.getElementById("humidity");
 let forecasedays = document.getElementById("forecase-middle");
 let input = document.querySelector('input');
+let greet = document.getElementById('greetings');
 
 window.addEventListener('DOMContentLoaded', ()=>{
   fetchApi()
@@ -59,17 +60,27 @@ const fetchApi = () => {
     document.querySelector('.spinner').classList.add('d-none');
   });
 }
+
 function addTime(){
   let myDate = new Date();
   let getHours = myDate.getHours()
   if(getHours >= 5 && getHours < 10){
-    console.log('good morning');
+    greet.innerText = 'Good Morning'
   } else if (getHours >= 10 && getHours <= 20){
-    console.log('good evening');
+    greet.innerText = 'Good Evening'
   } else if (getHours > 20 && getHours <= 23 || getHours >= 0 && getHours < 5 ){
-    console.log('good night');
+    greet.innerText = 'Good Night'
   }
 }
 addTime()
 
+function changePicture(){
+  let pictureTime = new Date().getHours();
+    if (pictureTime > 5 && 20) {
+      document.getElementById('d&n').src = './asset/img/sun.png'
+    } else {
+      document.getElementById('d&n').src = './asset/img/moon.png'
+    }
+  }
 
+changePicture()
