@@ -38,6 +38,9 @@ const fetchApi = () => {
     date.innerText = new Date(localTime).toLocaleString("default", {dateStyle: "medium"});
     location_.innerText = `${data.location.name}, ${data.location.country}`;
     temp.innerText = data.current.temp_c;
+    if (data.current.temp_c > 20) {
+      document.querySelector('.current-weather .card').style.background =  'linear-gradient(to bottom right, #0581e7a2, #072ff456), url(../img/img-1-BkOV7qYq.jpg)';
+    }
     weatherType.innerText = data.current.condition.text;
     feelsLike.innerText = data.current.feelslike_c;
     wind.innerText = `${data.current.wind_kph} KM/h`;
