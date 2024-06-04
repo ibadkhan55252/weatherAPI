@@ -79,7 +79,7 @@ addTime()
 
 function changePicture(){
   let pictureTime = new Date().getHours();
-    if (pictureTime > 5 && 20) {
+    if (pictureTime > 5 && pictureTime <= 20) {
       document.getElementById('d&n').src = './asset/img/sun.png'
     } else {
       document.getElementById('d&n').src = './asset/img/moon.png'
