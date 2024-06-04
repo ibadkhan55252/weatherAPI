@@ -59,6 +59,17 @@ const fetchApi = () => {
     document.querySelector('.spinner').classList.add('d-none');
   });
 }
-let myDate = new Date();
-let getHours = myDate.getHours()
-console.log(getHours);
+function addTime(){
+  let myDate = new Date();
+  let getHours = myDate.getHours()
+  if(getHours >= 5 && getHours < 10){
+    console.log('good morning');
+  } else if (getHours >= 10 && getHours <= 20){
+    console.log('good evening');
+  } else if (getHours > 20 && getHours <= 23 || getHours >= 0 && getHours < 5 ){
+    console.log('good night');
+  }
+}
+addTime()
+
+
