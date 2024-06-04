@@ -58,5 +58,7 @@ const fetchApi = () => {
     forecasedays.innerHTML = printHTML;
     document.querySelector('.spinner').classList.add('d-none');
   });
-
 }
+let myDate = new Date();
+let getHours = myDate.getHours()
+console.log(getHours);

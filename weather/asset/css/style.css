@@ -122,7 +122,6 @@ h3 {
   position: relative;
   border: 15px solid #ffff;
   border-top-color: yellow;
-  outline: 1px solid grey;
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
@@ -134,7 +133,7 @@ h3 {
     transform: rotate(1turn);
   }
 }
-.inset-0{
+.inset-0 {
   inset: 0;
 }
 
@@ -142,12 +141,28 @@ h3 {
   /* .row .col-12 {
     flex-direction: column;
   } */
+
+  p {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 54px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+
   .current-weather .card {
     width: 400px;
     border-radius: 0;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
-    
   }
   .forecast-weather {
     width: 400px;
@@ -160,3 +175,41 @@ h3 {
   }
 }
 
+@media screen and (max-width: 575.97px) {
+  p {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .current-weather .card {
+    width: 300px;
+    height: auto;
+  }
+  .forecast-weather {
+    width: 300px;
+  }
+  .spinner {
+    width: 50px;
+    height: 50px;
+    border: 6px solid #ffff;
+    border-top-color: yellow;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .current-weather .card {
+    width: 250px;
+  }
+  .forecast-weather {
+    width: 250px;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  .current-weather .card {
+    padding: 14px;
+  }
+  .forecast-weather {
+    padding: 14px;
+  }
+}
