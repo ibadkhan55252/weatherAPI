@@ -51,8 +51,8 @@ h3 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: linear-gradient(to bottom right, #0581e7a2, #072ff456),
-    url(../img/img-1-BkOV7qYq.jpg);
+  background: linear-gradient(to bottom right, #0581e7a2, #072ff456);
+    /* url(../img/img-1-BkOV7qYq.jpg); */
   background-position: center bottom;
   background-size: cover;
   background-repeat: no-repeat;

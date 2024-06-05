@@ -10,10 +10,9 @@ let forecasedays = document.getElementById("forecase-middle");
 let input = document.querySelector('input');
 let greet = document.getElementById('greetings');
 
-window.addEventListener('DOMContentLoaded', ()=>{
-  fetchApi()
-})
-
+// window.addEventListener('DOMContentLoaded', ()=>{
+//   fetchApi()
+// })
 
 
 // handel listener to fetch api when enter
@@ -38,9 +37,9 @@ const fetchApi = () => {
     date.innerText = new Date(localTime).toLocaleString("default", {dateStyle: "medium"});
     location_.innerText = `${data.location.name}, ${data.location.country}`;
     temp.innerText = data.current.temp_c;
-    if (data.current.temp_c > 20) {
-      document.querySelector('.current-weather .card').style.background =  'linear-gradient(to bottom right, #0581e7a2, #072ff456), url(../img/img-1-BkOV7qYq.jpg)';
-    }
+    // if (data.current.temp_c > 20) {
+    //   document.querySelector('.current-weather .card').style.background =  'linear-gradient(to bottom right, #0581e7a2, #072ff456), url(../img/img-1-BkOV7qYq.jpg)';
+    // }
     weatherType.innerText = data.current.condition.text;
     feelsLike.innerText = data.current.feelslike_c;
     wind.innerText = `${data.current.wind_kph} KM/h`;
@@ -61,15 +60,20 @@ const fetchApi = () => {
     }, "");
     forecasedays.innerHTML = printHTML;
     document.querySelector('.spinner').classList.add('d-none');
-  });
-}
+  }).catch((error)=>{
+    console.log('data not found');
+  })
+};
+
 
 function addTime(){
   let myDate = new Date();
   let getHours = myDate.getHours()
   if(getHours >= 5 && getHours < 10){
-    greet.innerText = 'Good Morning'
-  } else if (getHours >= 10 && getHours <= 20){
+    greet.innerText = 'Good Morning';
+  } else if (getHours >= 10 && getHours <= 15){
+    greet.innerText = 'Good Afternoon'
+  } else if (getHours > 15 && getHours <= 20){
     greet.innerText = 'Good Evening'
   } else if (getHours > 20 && getHours <= 23 || getHours >= 0 && getHours < 5 ){
     greet.innerText = 'Good Night'
@@ -87,3 +91,5 @@ function changePicture(){
   }
 
 changePicture()
+
+fetchApi()
