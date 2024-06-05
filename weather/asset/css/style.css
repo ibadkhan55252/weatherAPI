@@ -208,10 +208,10 @@ h3 {
 
 @media screen and (max-width: 380px) {
   .current-weather .card {
-    width: 320px;
+    max-width: 320px;
   }
   .forecast-weather {
-    width: 320px;
+    max-width: 320px;
   }
 }
 @media screen and (max-width: 320px) {
