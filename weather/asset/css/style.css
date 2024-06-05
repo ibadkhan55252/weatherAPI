@@ -192,11 +192,11 @@ h3 {
 }
 @media screen and (max-width: 425px) {
   .current-weather .card {
-    width: 100%;
+    width: 350px;
     height: auto;
   }
   .forecast-weather {
-    width: 100%;
+    width: 350px;
   }
   .spinner {
     width: 50px;
@@ -206,6 +206,22 @@ h3 {
   }
 }
 
+@media screen and (max-width: 380px) {
+  .current-weather .card {
+    width: 320px;
+  }
+  .forecast-weather {
+    width: 320px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .current-weather .card {
+    width: 250px;
+  }
+  .forecast-weather {
+    width: 250px;
+  }
+}
 
 @media screen and (max-width: 280px) {
   .current-weather .card {
